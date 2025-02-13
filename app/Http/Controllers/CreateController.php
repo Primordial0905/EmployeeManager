@@ -57,7 +57,7 @@ class CreateController extends Controller
         ]);
         
 
-        // unlink(public_path('images/'.$employee->Image));
+        unlink(public_path('images/'.$employee->image));
         $file = $request->file('Image');
         $filename = $file->getClientOriginalName();
         $file->move(public_path('images'), $filename);
@@ -77,7 +77,7 @@ class CreateController extends Controller
         $employee = Employee::find($id);
 
 
-        // unlink(public_path('images/'.$employee->Image));
+        unlink(public_path('images/'.$employee->image));
         $employee->delete();
         return redirect('/')->with('success', 'Employee has been deleted');
     }
