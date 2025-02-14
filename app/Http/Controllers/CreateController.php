@@ -58,18 +58,11 @@ class CreateController extends Controller
             'Image' => 'nullable',
         ]);
 
-<<<<<<< HEAD
-        unlink(public_path('images/'.$employee->image));
-        $file = $request->file('Image');
-        $filename = $file->getClientOriginalName();
-        $file->move(public_path('images'), $filename);
-=======
     
         if ($request->hasFile('Image')) {
             if ($employee->image && file_exists(public_path('images/' . $employee->image))) {
                 unlink(public_path('images/' . $employee->image)); 
             }
->>>>>>> 2cf9b43 (Edit bug fix)
 
             $file = $request->file('Image');
             $filename = $file->getClientOriginalName();
@@ -94,10 +87,6 @@ class CreateController extends Controller
     public function DeleteEmployee($id){
         $employee = Employee::find($id);
 
-<<<<<<< HEAD
-
-=======
->>>>>>> 2cf9b43 (Edit bug fix)
         unlink(public_path('images/'.$employee->image));
         $employee->delete();
         return redirect('/')->with('success', 'Employee has been deleted');

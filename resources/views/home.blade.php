@@ -10,7 +10,7 @@
         <h5 class="card-title">{{$employee->name}}</h5>
         <p class="card-text">Umur: {{$employee->age}}</p>
         <p class="card-text">Alamat: {{$employee->address}}</p>
-        <p class="card-text">Tlp: {{$employee->phone}}</p>
+        <p class="card-text">Telepon: {{$employee->phone}}</p>
         <a href="{{'/edit/'.$employee->id}}" class="btn btn-primary">Edit</a>
         <form action ="{{'/delete/'.$employee->id}}" method ="post" class="d-inline">
           @csrf
